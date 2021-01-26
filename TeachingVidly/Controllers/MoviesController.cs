@@ -40,7 +40,12 @@ namespace TeachingVidly.Controllers
                 Name = "Shrek"
             };
 
-            return View(movie);
+            return RedirectToAction("Index","Home", new { page = 1, sort = 2});
+        }
+
+        public ActionResult Edit(int movieId=0)
+        {
+            return Content("id=" + movieId);
         }
     }
 }

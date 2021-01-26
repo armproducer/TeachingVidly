@@ -8,16 +8,20 @@ namespace TeachingVidly.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int? page, int? sort)
         {
+            int? sum = page + sort;
+            ViewBag.hren = sum;
             return View();
         }
+
+        
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return new ViewResult();
         }
 
         public ActionResult Contact()
